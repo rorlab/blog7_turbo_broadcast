@@ -1,24 +1,3 @@
-# README
+# Rails7 의 Hotwire 를 이용한 간단한 CRUD 구현
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+2023년 7월 24일 RORLAB BIWEEKLY ONLINE TOPIC LECTURE 에서 데모로 보여 드렸던 간단한 CRUD 구현입니다.
