@@ -1,0 +1,7 @@
+<h2>Edit Post</h2>
+
+<%= turbo_frame_tag 'edit_post' do %>
+  <%= render 'posts/form', post: @post %>
+<% end %>
+
+<%= link_to "Go to posts", posts_path %>

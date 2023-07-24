@@ -1,0 +1,13 @@
+<h1>Posts</h1>
+
+<%= turbo_frame_tag Post.new do %>
+  <%= link_to "New post", new_post_path %>
+<% end %>
+
+<%= turbo_stream_from :posts %>
+
+<div id="posts">
+  <%= render @posts %>
+</div>
+
+<%= link_to "Root", root_path %>

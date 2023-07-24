@@ -1,0 +1,5 @@
+<%= form_with model: [ comment.post, comment ], data: { controller: 'reset-form', action: "turbo:submit-end->reset-form#reset"} do |form| %>
+  <%= form.text_area :body %><br />
+  <%= form.submit %>
+  <%= link_to "Close Comment", '#' if turbo_frame_requested? %>
+<% end %>

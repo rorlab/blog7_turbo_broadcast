@@ -1,0 +1,8 @@
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+<%= turbo_frame_tag 'nav' do %>
+  <%= link_to 'About', '/about' %>
+<% end %>
+
+<%= link_to "Posts", posts_path %>

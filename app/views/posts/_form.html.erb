@@ -1,0 +1,17 @@
+  <%= form_with model: post, data: { controller: 'reset-form', action: 'turbo:submit-end->reset-form#reset'} do |form| %>
+    <%#= render 'posts/post_errors' %>
+
+    <div>
+      <%= form.text_field :title, placeholder: 'title' %>
+      <% post.errors.full_messages_for(:title).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.text_area :body, placeholder: 'body' %>
+    </div>
+    <div>
+      <%= form.submit %>
+      <%= link_to 'Close Form', '#' if turbo_frame_requested? %>
+    </div>
+  <% end %>

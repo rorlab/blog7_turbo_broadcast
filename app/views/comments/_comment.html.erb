@@ -1,0 +1,7 @@
+<div id="<%= dom_id comment %>" class="animate__animated" data-animate-in="animate__bounceIn" data-animate-out="animate__bounceOut">
+  <%= comment.body %>
+  <%= turbo_frame_tag :edit_comment do %>
+    <%= link_to "Edit", edit_post_comment_path(comment.post, comment) %>
+  <% end %>
+  <%= link_to "Delete", [comment.post, comment], data: { turbo_method: :delete } %>
+</div>
