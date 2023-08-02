@@ -2,7 +2,7 @@
     <%#= render 'posts/post_errors' %>
 
     <div>
-      <%= form.text_field :title, placeholder: 'title' %>
+      <%= form.text_field :title, placeholder: 'title', autofocus: true %>
       <% post.errors.full_messages_for(:title).each do |message| %>
         <div><%= message %></div>
       <% end %>
@@ -12,6 +12,6 @@
     </div>
     <div>
       <%= form.submit %>
-      <%= link_to 'Close Form', '#' if turbo_frame_requested? %>
+      <%= link_to 'Close Form', posts_path if turbo_frame_requested? %>
     </div>
   <% end %>

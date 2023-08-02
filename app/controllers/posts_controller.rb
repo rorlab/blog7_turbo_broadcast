@@ -20,10 +20,8 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.turbo_stream
         format.html { redirect_to posts_path }
       else
-        format.turbo_stream { render turbo_stream: turbo_stream.replace(:new_post, partial: "posts/form", locals: { post: @post }) }
         format.html { render :new }
       end
     end
@@ -34,11 +32,9 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update(post_params)
-        format.turbo_stream
         format.html { redirect_to posts_path }
       else
-        format.turbo_stream { render turbo_stream: turbo_stream.replace(:edit_post, partial: "posts/form", locals: { post: @post }) }
-        format.html { render :new }
+        format.html { render :edit, status: :unprocessable_entity }
       end
     end
   end
@@ -48,7 +44,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.turbo_stream { render turbo_stream: turbo_stream.remove(@post) }
+      format.turbo_stream
       format.html { redirect_to posts_path }
     end
   end

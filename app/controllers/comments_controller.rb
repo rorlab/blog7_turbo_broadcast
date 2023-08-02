@@ -30,7 +30,7 @@ class CommentsController < ApplicationController
 
   def update
     @comment = @post.comments.find(params[:id])
-    
+
     respond_to do |format|
       if @comment.update(comment_params)
         format.turbo_stream { render turbo_stream: turbo_stream.replace(@comment, partial: "comments/comment", locals: { comment: @comment }) }
