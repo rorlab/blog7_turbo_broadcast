@@ -34,7 +34,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update(post_params)
-        format.turbo_stream { render turbo_stream: turbo_stream.replace(@post, partial: "posts/post", locals: { post: @post }) }
+        format.turbo_stream
         format.html { redirect_to posts_path }
       else
         format.turbo_stream { render turbo_stream: turbo_stream.replace(:edit_post, partial: "posts/form", locals: { post: @post }) }
